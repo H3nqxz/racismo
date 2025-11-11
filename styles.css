@@ -1,9 +1,25 @@
-/* =====================================
+/* ===================================================
    Tema: HISTÓRIAS DE SUPERAÇÃO DE MULHERES
-   Estilo inspirador, elegante e acolhedor
-   ===================================== */
+   Estilo: Elegante, Acolhedor e Moderno (Dedicado)
+   =================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* === 1. RESET E VARIAVEIS GLOBAIS === */
+:root {
+  /* Paleta de Cores */
+  --cor-principal-forte: #6a1b9a; /* Roxo Profundo */
+  --cor-principal-clara: #ad1457; /* Rosa Intenso */
+  --cor-texto-escuro: #4a148c;   /* Roxo Texto */
+  --cor-fundo-claro: #f3e5f5;    /* Lilás Fundo */
+  --cor-destaque: #ffeb3b;       /* Amarelo Brilhante */
+  --cor-neutra-clara: #fff;
+  
+  /* Sombras */
+  --sombra-leve: 0 3px 6px rgba(0, 0, 0, 0.1);
+  --sombra-media: 0 5px 15px rgba(106, 27, 154, 0.25);
+  --sombra-destaque: 0 8px 20px rgba(173, 20, 87, 0.4);
+}
 
 * {
   margin: 0;
@@ -13,135 +29,283 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #f3e5f5, #fce4ec);
-  color: #4a148c;
+  background: linear-gradient(135deg, var(--cor-fundo-claro), #fce4ec);
+  color: var(--cor-texto-escuro);
   line-height: 1.6;
+  min-height: 100vh; /* Garante que o fundo cubra toda a tela */
 }
 
-/* ===== CABEÇALHO ===== */
+/* === 2. CABEÇALHO (TOPO) === */
 .topo {
-  background: linear-gradient(90deg, #6a1b9a, #ad1457);
-  color: #fff;
+  background: linear-gradient(90deg, var(--cor-principal-forte), var(--cor-principal-clara));
+  color: var(--cor-neutra-clara);
   text-align: center;
-  padding: 25px 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  padding: 30px 10px; /* Mais preenchimento */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra mais forte */
 }
 
 .logo {
-  font-size: 2em;
-  letter-spacing: 2px;
-  font-weight: 700;
+  font-size: 2.2em;
+  letter-spacing: 3px;
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .menu {
-  margin-top: 15px;
+  margin-top: 18px;
 }
 
 .menu a {
   color: #ffe0f0;
   text-decoration: none;
-  margin: 0 15px;
+  margin: 0 20px; /* Maior espaçamento */
   font-weight: 500;
-  transition: color 0.3s ease;
+  font-size: 1.05em;
+  transition: all 0.3s ease;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
-.menu a:hover,
+.menu a:hover {
+  color: var(--cor-destaque);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 .menu a.ativo {
-  color: #ffeb3b;
+  color: var(--cor-destaque);
+  border-bottom: 3px solid var(--cor-destaque); /* Destaque elegante */
+  font-weight: 600;
 }
 
-/* ===== INTRODUÇÃO ===== */
-.introducao {
-  max-width: 900px;
-  margin: 60px auto;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(106, 27, 154, 0.2);
+/* === 3. ESTILO DE BOTÃO (GLOBAL) === */
+.botao {
+  display: inline-block;
+  background-color: var(--cor-principal-clara);
+  color: var(--cor-neutra-clara);
+  padding: 14px 30px; /* Mais área de clique */
+  border-radius: 30px; /* Botão arredondado */
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  margin-top: 25px;
+  box-shadow: var(--sombra-media);
+  border: none;
 }
 
-.introducao h2 {
-  color: #6a1b9a;
+.botao:hover {
+  background-color: var(--cor-principal-forte);
+  transform: translateY(-2px); /* Efeito 3D sutil */
+  box-shadow: 0 7px 18px rgba(173, 20, 87, 0.5);
+}
+
+/* === 4. CONTEÚDO PRINCIPAL (MAIN) === */
+.principal {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+h2 {
+  color: var(--cor-principal-forte);
   margin-bottom: 20px;
   font-size: 2em;
   font-weight: 700;
 }
 
-.introducao p {
-  color: #4a148c;
-  font-size: 1.1em;
-  margin-bottom: 15px;
+/* === 5. ESTILO DOS BLOCOS DE CONTEÚDO (CAIXAS) === */
+.caixa {
+  background-color: var(--cor-neutra-clara);
+  padding: 40px;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  box-shadow: var(--sombra-media);
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
 
-/* ===== GALERIA ===== */
+.caixa.apresentacao {
+  flex-direction: row; /* Início: Texto à esquerda, Imagem à direita */
+}
+
+.caixa.importancia {
+  background-color: #fce4ec; /* Fundo levemente diferente */
+  box-shadow: 0 5px 15px rgba(255, 192, 203, 0.5); /* Sombra rosada */
+  flex-direction: row-reverse; /* Inverte para quebrar o layout */
+}
+
+.caixa .texto {
+  flex: 2;
+}
+
+.caixa .imagem-destaque {
+  flex: 1;
+  text-align: center;
+}
+
+.caixa .imagem-destaque img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--sombra-destaque);
+  transition: transform 0.4s;
+}
+
+.caixa .imagem-destaque img:hover {
+  transform: scale(1.02);
+}
+
+.caixa .imagem-destaque figcaption {
+  font-size: 0.9em;
+  color: var(--cor-principal-clara);
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* === 6. BANNER DE DESTAQUE (TEMA PRINCIPAL) === */
+.banner-destaque {
+  background: linear-gradient(100deg, var(--cor-principal-forte), #8e24aa);
+  color: var(--cor-neutra-clara);
+  padding: 50px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.banner-destaque h2 {
+  color: var(--cor-destaque);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+}
+
+.banner-destaque p {
+  font-size: 1.1em;
+  font-weight: 300;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* === 7. CHAMADA PARA AÇÃO FINAL (CTA) === */
+.chamada-acao {
+  text-align: center;
+  padding: 40px;
+  border: 3px dashed var(--cor-principal-clara);
+  border-radius: 20px;
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.chamada-acao h3 {
+  color: var(--cor-principal-forte);
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.chamada-acao p {
+  color: var(--cor-texto-escuro);
+  font-size: 1.1em;
+}
+
+.chamada-acao .cta-final {
+  background-color: var(--cor-principal-clara);
+  /* Estilo diferenciado para CTA final */
+}
+
+.chamada-acao .icone-leitura {
+  margin-right: 8px;
+  font-size: 1.2em;
+}
+
+/* === 8. RODAPÉ (FOOTER) === */
+.rodape {
+  background-color: var(--cor-principal-forte);
+  color: #fff;
+  text-align: center;
+  padding: 25px;
+  font-size: 0.95em;
+  border-top: 5px solid var(--cor-principal-clara); /* Borda de destaque */
+}
+
+.rodape strong {
+  color: var(--cor-destaque);
+}
+
+.rodape em {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.85em;
+  opacity: 0.8;
+}
+
+
+/* ===== 9. GALERIA (Estilo herdado do código original) ===== */
 .galeria {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.5); /* Um pouco mais claro */
   padding: 40px 10px;
 }
 
 .imagens-galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Minimo maior */
+  gap: 25px; /* Maior espaçamento */
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .imagens-galeria img {
   width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(106, 27, 154, 0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 15px; /* Mais arredondado */
+  box-shadow: 0 6px 15px rgba(74, 20, 140, 0.4);
+  transition: all 0.4s ease;
   object-fit: cover;
+  border: 3px solid var(--cor-principal-clara); /* Borda sutil */
 }
 
 .imagens-galeria img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(173, 20, 87, 0.4);
+  transform: translateY(-5px) scale(1.03); /* Novo efeito */
+  box-shadow: 0 10px 25px rgba(173, 20, 87, 0.6);
 }
 
-/* ===== RODAPÉ ===== */
-.rodape {
-  background-color: #4a148c;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.95em;
+
+/* ===== 10. RESPONSIVO AVANÇADO ===== */
+@media (max-width: 900px) {
+  .caixa.apresentacao,
+  .caixa.importancia {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .caixa .imagem-destaque {
+      margin-top: 20px;
+  }
 }
 
-.rodape b {
-  color: #ffb74d;
-}
-
-/* ===== RESPONSIVO ===== */
 @media (max-width: 600px) {
   .logo {
-    font-size: 1.5em;
+    font-size: 1.8em;
+    letter-spacing: 1px;
   }
 
-  .introducao {
+  .topo {
+    padding: 20px 10px;
+  }
+  
+  .menu a {
+    display: block;
+    margin: 8px 5px;
+  }
+  
+  h2 {
+    font-size: 1.6em;
+  }
+
+  .caixa {
     padding: 25px;
   }
-
-  .menu a {
-    display: inline-block;
-    margin: 8px;
+  
+  .banner-destaque {
+      padding: 30px;
   }
-}
-.botao {
-  display: inline-block;
-  background-color: #ad1457;
-  color: #fff;
-  padding: 12px 25px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  margin-top: 15px;
-}
-
-.botao:hover {
-  background-color: #6a1b9a;
-  transform: scale(1.05);
 }
