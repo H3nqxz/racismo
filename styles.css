@@ -129,3 +129,19 @@ body {
     margin: 8px;
   }
 }
+.botao {
+  display: inline-block;
+  background-color: #ad1457;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.botao:hover {
+  background-color: #6a1b9a;
+  transform: scale(1.05);
+}
